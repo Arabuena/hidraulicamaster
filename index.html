@@ -296,6 +296,12 @@
         </div>
     </section>
 
+    <!-- Banner LGPD/Cookies -->
+    <div id="lgpd-banner" style="display:none; position:fixed; bottom:0; left:0; width:100%; background:#222; color:#fff; padding:18px 10px; z-index:9999; box-shadow:0 -2px 10px rgba(0,0,0,0.2); text-align:center; font-size:1rem;">
+        Este site utiliza cookies e coleta dados pessoais para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="politica.html" target="_blank" style="color:#FFD700; text-decoration:underline;">Política de Privacidade</a>.
+        <button id="lgpd-accept" style="margin-left:20px; background:#e74c3c; color:#fff; border:none; border-radius:5px; padding:8px 18px; font-weight:600; cursor:pointer;">Aceitar</button>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -316,11 +322,30 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Hidráulica Master. Todos os direitos reservados.</p>
+                <p>&copy; 2024 Hidráulica Master. Todos os direitos reservados. | <a href="politica.html" style="color:#FFD700; text-decoration:underline;">Política de Privacidade</a></p>
             </div>
         </div>
     </footer>
 
+    <!-- Checkbox LGPD no formulário de contato -->
+    <div style="margin-top:16px; margin-bottom:8px;">
+        <input type="checkbox" id="lgpd-consent" required>
+        <label for="lgpd-consent" style="font-size:0.95rem;">Li e concordo com a <a href="politica.html" target="_blank" style="color:#e74c3c; text-decoration:underline;">Política de Privacidade</a> e autorizo o uso dos meus dados para contato.</label>
+    </div>
+
     <script src="script.js"></script>
+    <!-- Script para banner LGPD -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var banner = document.getElementById('lgpd-banner');
+            if (!localStorage.getItem('lgpdAccepted')) {
+                banner.style.display = 'block';
+            }
+            document.getElementById('lgpd-accept').onclick = function() {
+                localStorage.setItem('lgpdAccepted', 'true');
+                banner.style.display = 'none';
+            };
+        });
+    </script>
 </body>
 </html> 
