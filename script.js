@@ -469,6 +469,49 @@ function initGalleryCarousel() {
     });
 }
 
+// Carrossel de Avaliações
+function initReviewsCarousel() {
+    const track = document.querySelector('.reviews-track');
+    const slides = Array.from(document.querySelectorAll('.review-slide'));
+    const nextButton = document.querySelector('.reviews-btn.next');
+    const prevButton = document.querySelector('.reviews-btn.prev');
+    const indicators = Array.from(document.querySelectorAll('.review-indicator'));
+    let currentIndex = 0;
+
+    function updateCarousel(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+        track.style.transform = `translateX(-${index * 100}%)`;
+        indicators.forEach((ind, i) => {
+            ind.classList.toggle('active', i === index);
+        });
+        currentIndex = index;
+    }
+
+    nextButton.addEventListener('click', () => {
+        let nextIndex = (currentIndex + 1) % slides.length;
+        updateCarousel(nextIndex);
+    });
+    prevButton.addEventListener('click', () => {
+        let prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel(prevIndex);
+    });
+    indicators.forEach((ind, i) => {
+        ind.addEventListener('click', () => updateCarousel(i));
+    });
+    // Swipe para mobile
+    let startX = 0;
+    track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+    track.addEventListener('touchend', (e) => {
+        let endX = e.changedTouches[0].clientX;
+        if (endX < startX - 30) nextButton.click();
+        if (endX > startX + 30) prevButton.click();
+    });
+}
+
 // Inicializar todas as funcionalidades
 document.addEventListener('DOMContentLoaded', function() {
     // Adicionar loader
@@ -492,6 +535,7 @@ document.addEventListener('DOMContentLoaded', function() {
         addSpotlightEffect();
         add3DTextEffect();
         initGalleryCarousel();
+        initReviewsCarousel();
     }, 100);
 });
 
