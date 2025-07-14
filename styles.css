@@ -947,9 +947,8 @@ html {
         font-size: 14px;
     }
     
-    .google-review-btn img {
-        width: 18px;
-        height: 18px;
+    .google-review-btn i {
+        font-size: 16px;
     }
 }
 
@@ -959,8 +958,7 @@ html {
         font-size: 13px;
     }
     
-    .google-review-btn img {
-        width: 16px;
-        height: 16px;
+    .google-review-btn i {
+        font-size: 14px;
     }
 } 
