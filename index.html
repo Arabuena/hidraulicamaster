@@ -133,15 +133,19 @@
                     </div>
                     
                     <div class="contact-item">
-                        <i class="fab fa-whatsapp"></i>
-                        <div>
-                            <h4>WhatsApp</h4>
-                            <p>(62) 99203-7519</p>
-                        </div>
+                        <a href="https://wa.me/556232710881" target="_blank" style="color:inherit; text-decoration:none; display:flex; align-items:center;">
+                            <i class="fab fa-whatsapp"></i>
+                            <div style="margin-left:8px;">
+                                <h4 style="margin:0;">WhatsApp</h4>
+                                <p style="margin:0;">(62) 3271-0881</p>
+                            </div>
+                        </a>
                     </div>
                     
                     <div class="contact-item">
-                        <i class="fab fa-instagram"></i>
+                        <a href="https://www.instagram.com/hidraulicamaster/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                         <div>
                             <h4>Instagram</h4>
                             <p>@hidraulicamaster</p>
@@ -149,19 +153,23 @@
                     </div>
                     
                     <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>hidraulicamaster@hotmail.com</p>
-                        </div>
+                        <a href="mailto:hidraulicamaster@hotmail.com" target="_blank" style="color:inherit; text-decoration:none; display:flex; align-items:center;">
+                            <i class="fas fa-envelope"></i>
+                            <div style="margin-left:8px;">
+                                <h4 style="margin:0;">Email</h4>
+                                <p style="margin:0;">hidraulicamaster@hotmail.com</p>
+                            </div>
+                        </a>
                     </div>
                     
                     <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Telefone</h4>
-                            <p>(62) 3271-0881</p>
-                        </div>
+                        <a href="tel:556232710881" target="_blank" style="color:inherit; text-decoration:none; display:flex; align-items:center;">
+                            <i class="fas fa-phone"></i>
+                            <div style="margin-left:8px;">
+                                <h4 style="margin:0;">Telefone</h4>
+                                <p style="margin:0;">(62) 3271-0881</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 
@@ -293,11 +301,14 @@
                     <h3>HIDRÁULICA MASTER</h3>
                 </div>
                 <div class="footer-social">
-                    <a href="https://wa.me/5562992037519" target="_blank" class="social-link">
+                    <a href="https://wa.me/556232710881" target="_blank" class="social-link">
                         <i class="fab fa-whatsapp"></i>
                     </a>
-                    <a href="https://instagram.com/hidraulicamaster" target="_blank" class="social-link">
+                    <a href="https://www.instagram.com/hidraulicamaster/" target="_blank" class="social-link">
                         <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="mailto:hidraulicamaster@hotmail.com" target="_blank" class="social-link">
+                        <i class="fas fa-envelope"></i>
                     </a>
                 </div>
             </div>
@@ -327,5 +338,17 @@
             };
         });
     </script>
+    <script>
+function ajustarHeroPadding() {
+  var header = document.querySelector('.header');
+  var hero = document.querySelector('.hero');
+  if (header && hero) {
+    var headerHeight = header.offsetHeight;
+    hero.style.paddingTop = (headerHeight + 16) + 'px';
+  }
+}
+window.addEventListener('DOMContentLoaded', ajustarHeroPadding);
+window.addEventListener('resize', ajustarHeroPadding);
+</script>
 </body>
 </html> 

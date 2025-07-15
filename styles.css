@@ -538,6 +538,9 @@ body {
     font-size: 1.5rem;
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
 }
 
 .social-link:hover {
@@ -961,4 +964,10 @@ html {
     .google-review-btn i {
         font-size: 14px;
     }
+} 
+
+@media (max-width: 600px) {
+  .hero {
+    padding-top: 100px;
+  }
 } 
